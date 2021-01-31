@@ -8,6 +8,8 @@ CREATE TABLE `issues` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` text NOT NULL,
   `description` text NOT NULL,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -19,7 +21,7 @@ DROP TABLE IF EXISTS `labels`;
 
 CREATE TABLE `labels` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` text NOT NULL,
+  `name` varchar(32) UNIQUE NOT NULL,
   PRIMARY KEY(`id`)
 );
 
