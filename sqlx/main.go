@@ -30,6 +30,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
+	defer db.Close()
 
 	// Goのフィールド名 ->  DBのフィールド名に変換する関数を指定する。
 	// DBのフィールド名はsnake_caseのときに使うと楽。

@@ -8,14 +8,16 @@ CREATE TABLE `issues` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` text NOT NULL,
   `description` text NOT NULL,
+  `bad_col_name` text NOT NULL,
+  `private_col_name` int,
   `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `issues` (`id`, `title`, `description`) VALUES
-    (1, 'title1', 'description1'),
-    (2, 'title2', 'description2');
+INSERT INTO `issues` (`id`, `title`, `description`, `bad_col_name`) VALUES
+    (1, 'title1', 'description1', 'bad1'),
+    (2, 'title2', 'description2', 'bad2');
 
 DROP TABLE IF EXISTS `labels`;
 
